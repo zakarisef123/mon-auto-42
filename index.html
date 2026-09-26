@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
   <script>document.documentElement.classList.add("js");</script>
 
   <script type="application/ld+json">
@@ -51,6 +52,21 @@
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <!-- Écran de démarrage -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__streaks"><span></span><span></span><span></span><span></span></div>
+    <div class="intro__inner">
+      <svg class="intro__wheel" viewBox="4 0 48 48">
+          <circle cx="28" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="4"/>
+          <circle cx="28" cy="24" r="6" fill="currentColor"/>
+          <path d="M28 8v10M28 30v10M12 24h10M34 24h10" stroke="currentColor" stroke-width="3"/>
+      </svg>
+      <div class="intro__name"><span>Mon Auto 42</span></div>
+      <div class="intro__bar"></div>
+    </div>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
 
   <!-- ============ HEADER ============ -->
   <header class="header" id="top">
@@ -89,6 +105,8 @@
     <section class="hero">
       <img class="hero__bg" src="assets/img/facade-garage.jpg" alt="Façade du garage Mon Auto 42 à Saint-Étienne avec des véhicules d'occasion exposés" fetchpriority="high">
       <div class="hero__overlay"></div>
+      <div class="hero__lights" aria-hidden="true"></div>
+      <div class="hero__speed" aria-hidden="true"></div>
       <div class="container hero__content">
         <p class="eyebrow reveal"><span class="dot"></span> Garage indépendant · Saint-Étienne (42)</p>
         <h1 class="reveal">Votre voiture entre <em>de bonnes mains.</em></h1>
@@ -98,12 +116,21 @@
           <a href="#occasions" class="btn btn--ghost btn--lg">Voir nos occasions</a>
         </div>
         <ul class="hero__facts reveal">
-          <li><strong>5</strong><span>métiers sous un même toit</span></li>
+          <li><svg class="gauge" viewBox="0 0 44 26" aria-hidden="true"><path class="track" d="M4 24a18 18 0 0 1 36 0" fill="none" stroke-width="4" stroke-linecap="round"/><path class="fill" d="M4 24a18 18 0 0 1 36 0" fill="none" stroke-width="4" stroke-linecap="round"/><line x1="22" y1="24" x2="22" y2="10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg><strong data-count="5">5</strong><span>métiers sous un même toit</span></li>
           <li><strong>Vente</strong><span>achat &amp; reprise</span></li>
           <li><strong>Devis</strong><span>gratuit et rapide</span></li>
         </ul>
       </div>
+      <span class="scroll-hint" aria-hidden="true"></span>
     </section>
+
+    <!-- Bandeau défilant -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Mécanique</span><span>Carrosserie</span><span>Pare-brise</span><span>Dépannage</span><span>Carte grise</span><span>Vente</span><span>Achat</span><span>Reprise</span>
+        <span>Mécanique</span><span>Carrosserie</span><span>Pare-brise</span><span>Dépannage</span><span>Carte grise</span><span>Vente</span><span>Achat</span><span>Reprise</span>
+      </div>
+    </div>
 
     <!-- ============ SERVICES ============ -->
     <section class="section" id="services">
@@ -170,7 +197,7 @@
     <!-- ============ OCCASIONS ============ -->
     <section class="section section--dark" id="occasions">
       <div class="container split">
-        <div class="split__media reveal">
+        <div class="split__media img-reveal">
           <img src="assets/img/parc-vehicules.jpg" alt="Véhicules d'occasion exposés devant le garage : Audi RS3, Audi RS5, Porsche 911" loading="lazy">
           <span class="badge">Occasions</span>
         </div>
@@ -192,6 +219,22 @@
       </div>
     </section>
 
+    <!-- Route : la voiture avance avec le scroll -->
+    <div class="road" aria-hidden="true">
+      <div class="road__car">
+        <svg viewBox="0 0 150 50" aria-hidden="true">
+          <defs><linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#fff6c8" stop-opacity=".9"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></linearGradient></defs>
+          <path class="beam" d="M140 30 L200 18 L200 44 Z" fill="url(#beam)" transform="translate(-8 0) scale(1)"/>
+          <path d="M6 36 C6 28 12 26 22 25 L44 23 C54 14 66 10 82 10 C98 10 108 16 118 23 L134 26 C142 27 146 30 146 36 L146 38 L6 38 Z" fill="#e3262f"/>
+          <path d="M50 23 C58 16 68 13 80 13 L82 23 Z M86 13 C96 13 104 17 111 23 L86 23 Z" fill="#0b1d3a" opacity=".85"/>
+          <rect x="139" y="28" width="7" height="4" rx="2" fill="#fff6c8"/>
+          <rect x="6" y="29" width="5" height="4" rx="1.5" fill="#ff8a8a"/>
+          <g class="wheel"><circle cx="36" cy="38" r="10" fill="#111"/><circle cx="36" cy="38" r="5" fill="#9aa3b2"/><path d="M36 30v16M28 38h16" stroke="#111" stroke-width="2"/></g>
+          <g class="wheel"><circle cx="118" cy="38" r="10" fill="#111"/><circle cx="118" cy="38" r="5" fill="#9aa3b2"/><path d="M118 30v16M110 38h16" stroke="#111" stroke-width="2"/></g>
+        </svg>
+      </div>
+    </div>
+
     <!-- ============ LE GARAGE ============ -->
     <section class="section" id="garage">
       <div class="container">
@@ -202,19 +245,19 @@
         </header>
 
         <div class="gallery">
-          <figure class="gallery__item gallery__item--wide reveal">
+          <figure class="gallery__item gallery__item--wide img-reveal">
             <img src="assets/img/atelier.jpg" alt="Atelier mécanique avec pont élévateur et véhicules en réparation" loading="lazy">
             <figcaption>L'atelier</figcaption>
           </figure>
-          <figure class="gallery__item reveal">
+          <figure class="gallery__item img-reveal">
             <img src="assets/img/accueil.jpg" alt="Espace d'accueil clientèle du garage" loading="lazy">
             <figcaption>L'accueil</figcaption>
           </figure>
-          <figure class="gallery__item reveal">
+          <figure class="gallery__item img-reveal">
             <img src="assets/img/parking-occasions.jpg" alt="Parking extérieur avec véhicules d'occasion à vendre" loading="lazy">
             <figcaption>Le parc extérieur</figcaption>
           </figure>
-          <figure class="gallery__item gallery__item--wide reveal">
+          <figure class="gallery__item gallery__item--wide img-reveal">
             <img src="assets/img/facade-garage.jpg" alt="Façade du garage Mon Auto 42" loading="lazy">
             <figcaption>1 rue du Puits de la Garenne</figcaption>
           </figure>
@@ -359,5 +402,6 @@
   </a>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
 </body>
 </html>
