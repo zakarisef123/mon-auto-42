@@ -7,6 +7,7 @@ import Services from './components/Services.jsx';
 import Occasions from './components/Occasions.jsx';
 import Road from './components/Road.jsx';
 import Garage from './components/Garage.jsx';
+import Process from './components/Process.jsx';
 import Devis from './components/Devis.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
@@ -40,6 +41,7 @@ export default function App() {
         <Occasions onChooseSujet={setSujet} />
         <Road />
         <Garage />
+        <Process />
         <Devis sujet={sujet} onSujetChange={setSujet} />
         <Contact />
       </main>

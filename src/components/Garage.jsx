@@ -1,4 +1,5 @@
 import { GALLERY, WHY } from '../data.jsx';
+import RevealTitle from './RevealTitle.jsx';
 
 export default function Garage() {
   return (
@@ -6,7 +7,7 @@ export default function Garage() {
       <div className="container">
         <header className="section__head reveal">
           <p className="kicker">Le garage</p>
-          <h2>Un atelier équipé, un accueil simple et direct.</h2>
+          <RevealTitle>Un atelier équipé, un accueil simple et direct.</RevealTitle>
           <p>
             Ponts élévateurs, outillage de diagnostic, espace d'exposition extérieur : on a tout sur place pour intervenir
             vite et bien.

@@ -89,3 +89,11 @@ export const WHY = [
   { title: 'Toutes marques', text: 'Citadines, utilitaires, SUV ou sportives : on connaît.' },
   { title: 'Tout-en-un', text: 'Réparation, vente et administratif : un seul interlocuteur.' },
 ];
+
+export const PROCESS = [
+  { title: 'Vous nous contactez', text: 'Par téléphone, WhatsApp ou directement au garage. On écoute ce qui ne va pas.' },
+  { title: 'Diagnostic', text: 'On examine le véhicule et on identifie précisément la panne ou les travaux à faire.' },
+  { title: 'Devis clair', text: 'Vous recevez un prix détaillé. Rien n’est fait sans votre accord.' },
+  { title: 'Intervention', text: 'Nos mécaniciens réparent avec des pièces adaptées, dans les délais annoncés.' },
+  { title: 'Vous repartez', text: 'On vous explique ce qui a été fait et vous reprenez la route sereinement.' },
+];
