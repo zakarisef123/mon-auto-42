@@ -1,4 +1,5 @@
 import { SERVICES } from '../data.jsx';
+import RevealTitle from './RevealTitle.jsx';
 
 export default function Services() {
   return (
@@ -6,7 +7,7 @@ export default function Services() {
       <div className="container">
         <header className="section__head reveal">
           <p className="kicker">Nos services</p>
-          <h2>Tout l'entretien et la réparation, au même endroit.</h2>
+          <RevealTitle>Tout l'entretien et la réparation, au même endroit.</RevealTitle>
           <p>Toutes marques, particuliers et professionnels. On diagnostique, on vous explique, on chiffre — et on répare.</p>
         </header>
 

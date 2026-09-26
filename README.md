@@ -1,7 +1,7 @@
 # Mon Auto 42 — site vitrine
 
 Site du garage Mon Auto 42, 1 Rue du Puits de la Garenne, 42000 Saint-Étienne.
-React + Vite, avec une roue de voiture 3D (Three.js + GSAP) dans le haut de page.
+React + Vite.
 
 ## Commandes
 
@@ -15,10 +15,9 @@ npm run build    # générer le site final dans dist/
 
 - `index.html` — point d'entrée (balises SEO, données Google)
 - `src/App.jsx` — assemblage des sections
-- `src/components/` — une section par fichier (Hero, Services, Occasions, Devis…)
-- `src/components/Wheel3D.jsx` — roue 3D Three.js/GSAP (pneu, jante, disque, étrier)
+- `src/components/` — une section par fichier (Hero, Services, Occasions, Process, Devis…)
 - `src/data.jsx` — textes, téléphone, adresse, horaires, services
-- `src/styles/` — styles et animations
+- `src/styles/` — styles et animations (`legal.css` pour la page mentions légales)
 - `public/assets/` — photos et favicon
 - `mentions-legales.html` — mentions légales
 - `netlify.toml` — réglages Netlify (build `npm run build`, dossier `dist`)

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { WhatsAppIcon } from './Icons.jsx';
 import { PHONE_DISPLAY, PHONE_INTL, PHONE_TEL, SUJETS } from '../data.jsx';
+import RevealTitle from './RevealTitle.jsx';
 
 const REQUIRED = ['nom', 'tel', 'message'];
 
@@ -43,7 +44,7 @@ export default function Devis({ sujet, onSujetChange }) {
       <div className="container devis">
         <div className="devis__intro reveal">
           <p className="kicker">Devis gratuit</p>
-          <h2>Décrivez votre besoin, on vous répond rapidement.</h2>
+          <RevealTitle>Décrivez votre besoin, on vous répond rapidement.</RevealTitle>
           <p>
             Remplissez le formulaire : votre demande s'ouvre directement dans WhatsApp (ou par SMS), prête à nous être
             envoyée. Vous préférez parler ? Appelez-nous.

@@ -1,7 +1,4 @@
-import { Suspense, lazy, useEffect, useMemo, useRef } from 'react';
-
-// Three.js est lourd : la roue 3D est chargée après le reste de la page
-const Wheel3D = lazy(() => import('./Wheel3D.jsx'));
+import { useEffect, useMemo, useRef } from 'react';
 
 const TITLE = [
   { text: 'Votre voiture entre' },
@@ -85,9 +82,6 @@ export default function Hero({ ready }) {
           <span key={k} style={style} />
         ))}
       </div>
-      <Suspense fallback={null}>
-        <Wheel3D className="hero__3d" />
-      </Suspense>
 
       <div className="container hero__content">
         <p className="eyebrow reveal">

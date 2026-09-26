@@ -75,6 +75,30 @@ export default function useSiteEffects() {
         });
       });
 
+      // Projecteur qui suit la souris dans les sections sombres
+      document.querySelectorAll('.section--dark').forEach((sec) => {
+        on(sec, 'mousemove', (e) => {
+          const r = sec.getBoundingClientRect();
+          sec.style.setProperty('--sx', `${e.clientX - r.left}px`);
+          sec.style.setProperty('--sy', `${e.clientY - r.top}px`);
+        });
+      });
+
+      // Photos : reflet + légère inclinaison 3D
+      document.querySelectorAll('.split__media, .gallery__item').forEach((el) => {
+        on(el, 'mousemove', (e) => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          el.style.setProperty('--gx', `${x * 100}%`);
+          el.style.setProperty('--gy', `${y * 100}%`);
+          el.style.transform = `perspective(900px) rotateX(${(0.5 - y) * 5}deg) rotateY(${(x - 0.5) * 7}deg)`;
+        });
+        on(el, 'mouseleave', () => {
+          el.style.transform = '';
+        });
+      });
+
       // Boutons magnétiques
       document.querySelectorAll('.hero__actions .btn, .split__actions .btn, .header__cta').forEach((btn) => {
         btn.classList.add('magnetic');

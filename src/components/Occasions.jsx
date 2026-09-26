@@ -1,3 +1,5 @@
+import RevealTitle from './RevealTitle.jsx';
+
 const CHECKS = [
   'Véhicules révisés et contrôlés par nos mécaniciens',
   'Reprise de votre ancien véhicule possible',
@@ -19,7 +21,7 @@ export default function Occasions({ onChooseSujet }) {
         </div>
         <div className="split__text reveal">
           <p className="kicker">Véhicules d'occasion</p>
-          <h2>De la citadine à la sportive, un parc qui bouge chaque semaine.</h2>
+          <RevealTitle>De la citadine à la sportive, un parc qui bouge chaque semaine.</RevealTitle>
           <p>
             Chaque véhicule passe par notre atelier avant d'être proposé : contrôle complet, entretien à jour, historique
             vérifié. Vous achetez en connaissant exactement ce que vous achetez.

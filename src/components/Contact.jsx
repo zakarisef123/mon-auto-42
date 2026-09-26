@@ -1,5 +1,6 @@
 import { PhoneIcon } from './Icons.jsx';
 import { ADDRESS_LINE1, ADDRESS_LINE2, HOURS, MAPS_DIRECTIONS, MAPS_EMBED, PHONE_DISPLAY, PHONE_TEL } from '../data.jsx';
+import RevealTitle from './RevealTitle.jsx';
 
 export default function Contact() {
   return (
@@ -7,7 +8,7 @@ export default function Contact() {
       <div className="container contact">
         <div className="contact__info reveal">
           <p className="kicker">Nous trouver</p>
-          <h2>Passez nous voir.</h2>
+          <RevealTitle>Passez nous voir.</RevealTitle>
           <ul className="contact__list">
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -53,6 +54,11 @@ export default function Contact() {
           </a>
         </div>
         <div className="contact__map reveal">
+          <div className="map-pulse" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
           <iframe
             title="Plan d'accès au garage Mon Auto 42"
             src={MAPS_EMBED}
