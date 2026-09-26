@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect, useMemo, useRef } from 'react';
 
-// Three.js est lourd : la scène 3D est chargée après le reste de la page
-const AnimationAdvanced = lazy(() => import('./AnimationAdvanced.jsx'));
+// Three.js est lourd : la roue 3D est chargée après le reste de la page
+const Wheel3D = lazy(() => import('./Wheel3D.jsx'));
 
 const TITLE = [
   { text: 'Votre voiture entre' },
@@ -86,7 +86,7 @@ export default function Hero({ ready }) {
         ))}
       </div>
       <Suspense fallback={null}>
-        <AnimationAdvanced className="hero__3d" />
+        <Wheel3D className="hero__3d" />
       </Suspense>
 
       <div className="container hero__content">
