@@ -195,3 +195,8 @@
 
 /* Empêche le bandeau incliné de créer un défilement horizontal */
 main { overflow-x: clip; }
+
+/* ---------- Scène 3D (Three.js) dans le hero ---------- */
+.hero__3d { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.hero__3d canvas { display: block; width: 100% !important; height: 100% !important; }
+@media (max-width: 880px) { .hero__3d { opacity: .55; } }

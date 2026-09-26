@@ -1,11 +1,30 @@
 # Mon Auto 42 — site vitrine
 
-Site statique (HTML/CSS/JS, sans dépendance) du garage Mon Auto 42, 1 Rue du Puits de la Garenne, 42000 Saint-Étienne.
+Site du garage Mon Auto 42, 1 Rue du Puits de la Garenne, 42000 Saint-Étienne.
+React + Vite, avec une scène 3D (Three.js + GSAP) dans le haut de page.
 
-- `index.html` — page principale (services, occasions, garage, devis, contact)
-- `mentions-legales.html` — mentions légales (champs « à compléter »)
-- `assets/` — styles, script, photos, favicon
+## Commandes
 
-Pour le mettre en ligne : déposer le dossier tel quel sur n'importe quel hébergement statique (GitHub Pages, Netlify, OVH…).
+```bash
+npm install      # installer les dépendances
+npm run dev      # lancer en local sur http://localhost:5173
+npm run build    # générer le site final dans dist/
+```
 
-À compléter : horaires réels (section Contact de `index.html`), SIRET / hébergeur (`mentions-legales.html`), nom de domaine (balise `canonical` et JSON-LD).
+## Structure
+
+- `index.html` — point d'entrée (balises SEO, données Google)
+- `src/App.jsx` — assemblage des sections
+- `src/components/` — une section par fichier (Hero, Services, Occasions, Devis…)
+- `src/components/AnimationAdvanced.jsx` — scène 3D Three.js/GSAP
+- `src/data.jsx` — textes, téléphone, adresse, horaires, services
+- `src/styles/` — styles et animations
+- `public/assets/` — photos et favicon
+- `mentions-legales.html` — mentions légales
+- `netlify.toml` — réglages Netlify (build `npm run build`, dossier `dist`)
+
+## À compléter
+
+- Horaires réels : `src/data.jsx` (`HOURS`)
+- SIRET / forme juridique / hébergeur : `mentions-legales.html`
+- Nom de domaine : balise `canonical` et JSON-LD dans `index.html`
